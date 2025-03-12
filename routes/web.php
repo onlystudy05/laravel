@@ -7,6 +7,7 @@ use App\Http\Controllers\EX1TP4Controller;
 use App\Http\Controllers\FormulaireController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Stagiaire;
 
 
 /*
@@ -129,17 +130,18 @@ use Illuminate\Http\Request;
 //     return redirect("/dashboard")->with(key: "id",value: "Connexion réussie !");
 // });
 
-Route::get("/",[AuthController::class,"show"]);
-Route::post('/login',[AuthController::class,"connect"])->name("signIn");
-Route::get('/home/{nom?}',[AuthController::class,"index"])->name("home");
+// Route::get("/",[AuthController::class,"show"]);
+// Route::post('/login',[AuthController::class,"connect"])->name("signIn");
+// Route::get('/home/{nom?}',[AuthController::class,"index"])->name("home");
 
 
-Route::get('/epargne',[epargneController::class,"index"])->name("index");
-Route::post('/simuler',[epargneController::class,"simuler"])->name("simuler");
+// Route::get('/epargne',[epargneController::class,"index"])->name("index");
+// Route::post('/simuler',[epargneController::class,"simuler"])->name("simuler");
 
-Route::get('/show',[FormulaireController::class,"indexx"])->name("addfilm");
-Route::get('/Allfilms',[FormulaireController::class,"showall"])->name("showall");
-Route::post('/addfilm',[FormulaireController::class,"add"]);
-Route::get('/delete/{id}',[FormulaireController::class,"delete"])->name("delete");
-Route::get('/showfil/{id}',[FormulaireController::class,"x"])->name("showfil");
-Route::post('/updatefilm/{id}',[FormulaireController::class,"update"])->name("updatefilm");
+// Route::get('/show',[FormulaireController::class,"indexx"])->name("addfilm");
+// Route::get('/Allfilms',[FormulaireController::class,"showall"])->name("showall");
+// Route::post('/addfilm',[FormulaireController::class,"add"]);
+// Route::get('/delete/{id}',[FormulaireController::class,"delete"])->name("delete");
+// Route::get('/showfil/{id}',[FormulaireController::class,"x"])->name("showfil");
+// Route::post('/updatefilm/{id}',[FormulaireController::class,"update"])->name("updatefilm");
+Route::resource('stagiaire',Stagiaire::class);
