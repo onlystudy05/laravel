@@ -13,16 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('groupes', function (Blueprint $table) {
+        Schema::create('annonces', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('description');
-            $table->string('image');
-            // list of id stagiaires 
-            $table->foreignId('stagiare_id')->constrained()->onDelete('cascade');
-            
+            $table->string("titre");
+            $table->string("type");
+            $table->string("description");
+            $table->string("ville");
+            $table->string("superficie");
+            $table->string("neuf");
+            $table->string("prix");
+            $table->timestamps();
+        });
     }
-);
+
     /**
      * Reverse the migrations.
      *
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('annonces');
     }
 };
