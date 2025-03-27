@@ -22,5 +22,10 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(FilmsSeeder::class);
         $this->call(AnnonceSeeder::class);
+        $this->call([
+            ParticipantSeeder::class,
+            SujetSeeder::class,
+            MessageSeeder::class,
+        ]);
     }
 }
