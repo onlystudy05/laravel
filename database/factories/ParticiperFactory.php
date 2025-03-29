@@ -18,6 +18,10 @@ class ParticiperFactory extends Factory
     {
         return [
             //
+            'codeParticipant' => \App\Models\Participant::factory(),
+            'codeMessage' => \App\Models\Message::factory(),
+
+            
         ];
     }
 }

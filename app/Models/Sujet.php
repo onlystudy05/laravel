@@ -9,11 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 class Sujet extends Model
 {
     use HasFactory;
-    protected $timestamps=false;
+    public $timestamps=false;
+    protected $primaryKey = 'codeSujet'; 
     protected $table = 'Sujet'; 
 
     public function Participant(){
-        return $this->belongsTo(Participant::class);
+        return $this->belongsTo(Participant::class, 'ProposerPar');
     }
     public function Message(){
         return $this->hasMany(Message::class);
