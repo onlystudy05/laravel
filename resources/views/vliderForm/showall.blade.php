@@ -10,7 +10,7 @@
     <h1> </h1>
     <a href="{{ route("film.create") }}" class="btn btn-primary">Ajouter un film</a>
     @if (session("msg"))
-        <p class="">{{ session("msg") }}</p>
+        <p class="alert alert-succes">{{ session("msg") }}</p>
     @endif
     <table class="table table-bordered mt-3">
       <tr> 
@@ -33,11 +33,20 @@
                     @endif 
                 </td> 
                 <td>{{ $film->id }}</td>
-                <td>{{ $film->photo }}</td>
+                <td>{{ $film->titre }}</td>
                 <td>{{ $film->pays }}</td>
                 <td>{{ $film->annee }}</td>
                 <td>{{ $film->genre }}</td>
                 <td>{{ $film->duree }}</td>
+                <td>
+                    <a href="{{ route('film.edit', $film->id) }}" class="btn btn-warning">Edit</a>
+                    <form action="{{ route('film.destroy', $film->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+
 
             </tr> 
         @endforeach 

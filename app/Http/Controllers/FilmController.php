@@ -69,9 +69,13 @@ class FilmController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit($id)
     {
         //
+        $film = film::find($id);
+        return view('vliderForm.edit', compact('film'));
+
+
     }
 
     /**
@@ -90,8 +94,10 @@ class FilmController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy()
+    public function destroy($id)
     {
-        abort(404);
+        $film=Film::find($id);
+        $film->delete();
+        return redirect()->route("film.index")->with("msg",'Le film a été supprime');
     }
 }
