@@ -4,7 +4,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\calculController;
 use App\Http\Controllers\epargneController;
 use App\Http\Controllers\EX1TP4Controller;
+use App\Http\Controllers\FilmController;
 use App\Http\Controllers\FormulaireController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Stagiaire;
@@ -144,4 +146,6 @@ use App\Http\Controllers\Stagiaire;
 // Route::get('/delete/{id}',[FormulaireController::class,"delete"])->name("delete");
 // Route::get('/showfil/{id}',[FormulaireController::class,"x"])->name("showfil");
 // Route::post('/updatefilm/{id}',[FormulaireController::class,"update"])->name("updatefilm");
-Route::resource('stagiaire',Stagiaire::class);
+//Route::resource('stagiaire',Stagiaire::class);
+
+Route::resource('film', FilmController::class);

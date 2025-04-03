@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 namespace App\Http\Controllers;
 
@@ -49,11 +49,11 @@ class Stagiaire extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
-    public function show(Film $film)
-    {
-        return view("Film.show", compact("film"));
-    }
+    */
+    // public function show(Film $film)
+    // {
+    //     return view("Film.show", compact("film"));
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -95,4 +95,4 @@ class Stagiaire extends Controller
     {
         //
     }
-}
+// } -->
