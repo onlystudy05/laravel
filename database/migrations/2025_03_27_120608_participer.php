@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('codeMessage'); 
             $table->primary(['codeParticipant', 'codeMessage']); 
             // Define foreign key constraints
-            $table->foreign('codeParticipant')->references('id')->on('Participant')->onDelete('cascade');
+            $table->foreign('codeParticipant')->references('codeParticipant')->on('Participant')->onDelete('cascade');
             $table->foreign('codeMessage')->references('codeMessage')->on('Message')->onDelete('cascade');
         });
     }

@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             ParticipantSeeder::class,
             SujetSeeder::class,
             MessageSeeder::class,
+            ParticiperSeeder::class,
         ]);
     }
 }
